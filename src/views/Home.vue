@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <search-form
-      :evidenceFormList="evidenceFormList"
+      :searchFormList="searchFormList"
       :formInfo="searchForm"
       :rules="{}"
       class="search-form"
@@ -75,7 +75,7 @@ export default {
     };
   },
   computed: {
-    evidenceFormList() {
+    searchFormList() {
       const that = this;
 
       return [

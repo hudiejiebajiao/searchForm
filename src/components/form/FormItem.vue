@@ -164,7 +164,9 @@ export default {
   },
   data() {
     return {
-      model: ""
+      model: "",
+      pageNum: 1,
+      flag: true
     };
   },
   watch: {
@@ -187,6 +189,22 @@ export default {
     loadmore() {
       if (this.formItem.loadmore) {
         this.formItem.loadmore.call(this, this.$refs.formItem.query);
+      }
+    },
+    async remoteMethod(query, type, funcName) {
+      this.pageNum = 1;
+      this.flag = true;
+      this[type] = await this[funcName](query);
+    },
+    // 下拉滚动
+    async loadmoreFun(type, funcName, query) {
+      if (this[type].length % ten === 0 && this.flag) {
+        this.pageNum += 1;
+        const list = await this[funcName](query);
+        if (!list.length) {
+          this.flag = false;
+        }
+        this[type] = this[type].concat(...list);
       }
     }
   }

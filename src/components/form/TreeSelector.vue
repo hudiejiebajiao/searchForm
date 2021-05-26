@@ -298,21 +298,29 @@ export default {
             false
           );
         });
+
         this.valueTitle = [];
+        this.valueId = null;
+
         this.$emit("change", this.valueId);
 
         return;
       }
       this.valueTitle = "";
+
       this.$emit("noderoot", null);
       this.$emit("change", this.valueId);
     },
     /* 清空选中样式 */
     clearSelected() {
       const allNode = document.querySelectorAll("#tree-option .el-tree-node");
-      for (let i = 0; i < allNode.length; i++) {
-        allNode[i] = allNode[i].classList.remove("is-current");
-      }
+      allNode.forEach((item) => {
+        item.classList.remove("is-current");
+      });
+      // for (let i = 0; i < allNode.length; i++) {
+      //   console.log(i, allNode[i].classList);
+      //   allNode[i] = allNode[i];
+      // }
     }
   }
 };

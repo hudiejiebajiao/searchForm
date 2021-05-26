@@ -41,8 +41,8 @@
       <el-button
         v-if="
           fullWidth > 1440
-            ? evidenceFormList.length > 3
-            : evidenceFormList.length > 2
+            ? searchFormList.length > 3
+            : searchFormList.length > 2
         "
         :icon="showInput ? 'el-icon-arrow-up' : 'el-icon-arrow-down'"
         size="mini"
@@ -62,7 +62,7 @@ export default {
     FormItem
   },
   props: {
-    evidenceFormList: {
+    searchFormList: {
       type: Array,
       default: () => []
     },
@@ -85,7 +85,7 @@ export default {
   },
   data() {
     return {
-      showInput: false,
+      showInput: true,
       fullWidth: document.documentElement.clientWidth
     };
   },
@@ -95,7 +95,7 @@ export default {
       const two = 2;
       const width = 1440;
       const num = this.fullWidth > width ? three : two;
-      const newList = this.evidenceFormList.filter((item) => !item.notShow);
+      const newList = this.searchFormList.filter((item) => !item.notShow);
 
       return newList && newList.length >= num && this.showInput
         ? newList
