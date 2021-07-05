@@ -1,0 +1,362 @@
+<z:config type="CatalogIndex" name="铁证首页" />
+<html lang="en">
+  <head>
+    <title>${Catalog.SEOTitle}-${Site.Name}</title>
+    <meta name="keywords" content="${Catalog.SEOKeywords}" />
+    <meta name="description" content="${Catalog.SEODescription}" />
+    <cms:include file="meta.template.html"></cms:include>
+    <link
+      rel="stylesheet"
+      href="https://asset.tsign.cn/apps/esign/font/custom_font/style.css?${now().time}"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../css/lessTools.css" />
+    <link rel="stylesheet" type="text/css" href="../css/askus.css" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../css/floatright.css?${now().time}"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/footer.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../css/header.css?${now().time}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../css/evidence.css?${now().time}"
+    />
+    <script src="../js/askus.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/askus.js"></script>
+    <script src="../js/floatright.js?${now().time}"></script>
+    <script src="../js/header.js?${now().time}"></script>
+  </head>
+
+  <body>
+    <!--头部-->
+    <cms:include file="header.template.html"></cms:include>
+    <!--在这里开始写html-->
+<div class="pro-banner">
+      <div class="container">
+        <cms:article catalogid="15231" level="Current" loadcontent="true">
+          <div class="banner_i"
+            style="background: url('../images/evidence/evi-banner.png') right center / 50% auto no-repeat;">
+             <h1 class="wow fadeInUp" data-wow-delay="50ms">铁证</h1>
+            <h6 class="wow fadeInUp" data-wow-delay="150ms">基于区块链的证据管理系统</h6>
+           
+          </div>
+          <div class="bg-img wow fadeInUp">
+            <img src="../images/evidence/evi-banner.png" alt="">
+          </div>
+        </cms:article>
+      </div>
+    
+    </div>
+    <div class="solve-nav" ref="solve_nav">
+      <div class="container">
+        <div class="nav_i" ref="nav_i">
+          <a href="javascript:;" onclick="curClick(0)" class="active"
+            >产品简介</a
+          >
+          <a href="javascript:;" onclick="curClick(1)">产品优势</a>
+          <a href="javascript:;" onclick="curClick(2)">解决方案</a>
+          <a href="javascript:;" onclick="curClick(3)">合作伙伴</a>
+          <div
+            class="line"
+            :style="'width: ' + navW + '%; left: ' + navOffset + '%;'"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div class="introduce">
+    <div class="introduce-con">
+      <img class="introduce-pic" src="../images/evidence/credible.png" alt="">
+      <div>
+        <h6>可信存证</h6>
+      <p>数据不出本地的前提下全流程证据保全，区块链技术确保证据不可篡改</p>
+      </div>
+    </div>
+    <div class="introduce-con">
+      <img class="introduce-pic" src="../images/evidence/management.png" alt="">
+      <div>
+        <h6>证据管理</h6>
+      <p>基于证据链的管理功能，自动关联证据，一键批量提取下载证据包</p>
+      </div>
+    </div>
+    <div class="introduce-con">
+      <img class="introduce-pic" src="../images/evidence/judicial.png" alt="">
+      <div>
+        <h6>司法联接</h6>
+      <p>证据Hash同步公证处，司法鉴定中心，支持司法链在线核验证据</p>
+      </div>
+    </div>
+  </div>
+  <div class="brief">
+    <div class="md" id="content1"></div>
+
+    <div class="content">
+
+      <h1>产品简介</h1>
+      <p class="brief-con">
+        基于蚂蚁区块链，面向金融、企业、政务等机构，推出的一套覆盖可信存证、证据管理、司法服务的综合证据管理系统。在原文不出本地的前提下进行电子数据保全，并形成唯一且不可篡改的哈希值，实时同步传输到蚂蚁司法链、公证处、司法鉴定中心。基于强大的证据链管理功能，一键批量提取证据并出具多样形式的具有司法效力的证据保全报告，直接提交司法机构受理，数据举证高效便捷。
+      </p>
+      <img class="brief-pic" src="../images/evidence/brief.png" alt="">
+    </div>
+    </div>
+  <div class="advantage">
+    <div class="md" id="content2"></div>
+
+    <div class="content">
+
+      <h1>产品优势</h1>
+      <div class="advantage-con">
+
+        <!-- Swiper -->
+        <div class="swiper-container evi-validity-left">
+          <div class="watermark">SECURITY</div>
+
+          <h3>证据有效性保障</h3>
+          <h2>原始数据本地保存+区块链技术</h2>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide active">证据模型规范存证</div>
+            <div class="swiper-slide">完整证据链配置</div>
+            <div class="swiper-slide">
+              <div style="width:116px;pointer-events: none;">
+                证据Hash推送区块链证据核验
+              </div>
+            </div>
+            <div class="swiper-slide">证据保全报告</div>
+          </div>
+        </div>
+        <div class="swiper-container evi-validity-right">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/evi-model.png" alt="">
+            </div>
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/evi-chain-detail.png" alt="">
+            </div>
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/evi-hash.png" alt="">
+            </div>
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/evi-report.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="advantage-con">
+        <!-- Swiper -->
+        <div class="swiper-container evi-manage-right">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/evi-point.png" alt="">
+            </div>
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/evi-chain.png" alt="">
+            </div>
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/evi-extract.png" alt="">
+
+            </div>
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/evi-download.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-container evi-manage-left">
+          <div class="watermark">SECURITY</div>
+
+          <h3>证据管理系统</h3>
+          <h2>强大的证据管理能力，全面的
+            出证能力</h2>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide active">保全点管理</div>
+            <div class="swiper-slide">证据链管理</div>
+            <div class="swiper-slide">一键批量提取证据链</div>
+            <div class="swiper-slide">证据包下载</div>
+          </div>
+        </div>
+        <div class="swiper-container evi-manage-right evi-manage-right-h5">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/evi-point.png" alt="">
+            </div>
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/evi-chain.png" alt="">
+            </div>
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/evi-extract.png" alt="">
+
+            </div>
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/evi-download.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  <div class="programme">
+    <div class="md" id="content3"></div>
+
+      <div class="content">
+        <h1>解决方案</h1>
+      <p>通过建设存证系统，从事后取证向事前取证方向转变，提高电子证据的效力，与网络仲裁、互联网法院等多个司法通道对接，实现电子数据准实时存储，不被篡改，从而达到网络仲裁、互联网法院判决要求，提升银行业务人员争议解决的效率。</p>
+      <!-- Swiper -->
+      <div class="programme-con">
+        <div class="swiper-container evi-programme-top">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide active">银行</div>
+            <div class="swiper-slide">融资租赁</div>
+            <div class="swiper-slide">知识产权</div>
+          </div>
+        </div>
+        <div class="swiper-container evi-programme-bottom">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/bank.png" alt="">
+            </div>
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/lease.png" alt="">
+            </div>
+            <div class="swiper-slide swiper-no-swiping">
+              <img src="../images/evidence/property.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  <div class="partner">
+    <div class="md" id="content4"></div>
+      <div class="content">
+        <h1>合作伙伴</h1>
+      <div class="partner-con">
+        <img class="partner-pic" src="../images/evidence/partner1.png" alt="">
+        <img class="partner-pic" src="../images/evidence/partner2.png" alt="">
+        <img class="partner-pic" src="../images/evidence/partner3.png" alt="">
+      </div>
+      </div>
+    </div>
+    <!--专业咨询-->
+    <div class="call wow fadeIn" data-wow-delay="50ms">
+    <div>铁证，让证据的司法效力更可信</div>
+    <cms:customcontent catalogid="15241" level="Current">
+      <z:list begin="1" count="1">
+        <a href="/pcgw/sy/mfsy/mfsy/" onclick="trial_dialog_or_window(event, ${CustomContent.contentTypeExtend.switchStatus}, '${CustomContent.contentTypeExtend.switchType}')"
+        >合作联系</a
+      >
+      </z:list>
+    </cms:customcontent>
+  </div>
+        <cms:include file="TrialDialog.template.html"></cms:include>
+    <!--底部-->
+    <cms:include file="footer.template.html"></cms:include>
+    <!--右边侧边栏-->
+    <cms:include file="floatright.template.html"></cms:include>
+    <!--神策埋点-->
+    <cms:include file="shence.template.html"></cms:include>
+    <script src="../js/qiyu.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/wow.min.js"></script>
+  <script src="../js/evidence.js?${now().time}"></script>
+      <script src="../js/swiper.min.js"></script>
+      <!-- Initialize Swiper -->
+  <script>
+    var galleryThumbs = new Swiper(".evi-validity-left", {
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true, 
+      slideToClickedSlide: true,
+      on:{
+       click: function(e){
+        const nodes=e.target.parentNode.children
+          for (let index = 0; index < nodes.length; index++) {
+             const element = nodes[index];
+              element.classList.remove("active")
+  
+          }
+            e.target.classList.add("active")
+         },
+       },
+    });
+   
+   
+    var galleryTop = new Swiper(".evi-validity-right", {
+      spaceBetween: 10,
+      noSwiping: true,
+      effect: "fade",
+      thumbs: {
+        swiper: galleryThumbs
+      }
+    });
+    var manageThumbs = new Swiper(".evi-manage-left", {
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true, slideToClickedSlide: true,
+      on:{
+    click: function(e){
+     const nodes=e.target.parentNode.children
+      for (let index = 0; index < nodes.length; index++) {
+        const element = nodes[index];
+         element.classList.remove("active")
+  
+        }
+            e.target.classList.add("active")
+         },
+    },
+    });
+    var manageTop = new Swiper(".evi-manage-right", {
+      spaceBetween: 10,
+      noSwiping: true,
+      effect: "fade",
+      thumbs: {
+        swiper: manageThumbs
+      }
+    });
+    var programmeTop = new Swiper(".evi-programme-top", {
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true, slideToClickedSlide: true,
+      on:{
+    click: function(e){
+     const nodes=e.target.parentNode.children
+      for (let index = 0; index < nodes.length; index++) {
+        const element = nodes[index];
+         element.classList.remove("active")
+  
+        }
+            e.target.classList.add("active")
+         },
+    },
+    });
+    var programmeThumbs = new Swiper(".evi-programme-bottom", {
+      spaceBetween: 10,
+      noSwiping: true,
+      effect: "fade",
+      thumbs: {
+        swiper: programmeTop
+      }
+    });
+  </script>
+    <script>
+      function phoneCallTrack() {
+        //埋点
+        window.tsignData.track("click_phone_call");
+      }
+      new WOW({
+        live: false,
+        callback(e) {}
+      }).init();
+    </script>
+  </body>
+</html>
