@@ -3,17 +3,17 @@
     v-if="!formItem.isNotShow"
     :label="formItem.label"
     :prop="formItem.model"
-    class="form_item "
+    class="form_item"
     :style="{ width: formItem.width }"
     :label-width="formItem.labelWidth"
   >
-    <template v-slot:label v-if="$slots.label">
+    <template slot="label" v-if="$slots.label">
       <slot name="label"></slot>
     </template>
     <el-select
       v-if="formItem.type === 'select'"
       v-model="model"
-      v-loadmore="loadmore"
+      v-loadmore="(v) => handleChange('loadmore', formItem.loadmore, v)"
       ref="formItem"
       :filterable="formItem.filterable"
       :remote="formItem.remote"
@@ -24,7 +24,9 @@
       :multiple-limit="formItem.multipleLimit || 0"
       :allow-create="formItem.allowCreate"
       :filter-method="formItem.filterMethod"
-      :remote-method="formItem.remoteMethod"
+      :remote-method="
+        (v) => handleChange('remoteMethod', formItem.remoteMethod, v)
+      "
       :loading="formItem.loading"
       :reserve-keyword="formItem.reserveKeyword"
       :default-first-option="formItem.defaultFirstOption"
@@ -140,12 +142,10 @@
 </template>
 <script>
 import InputMultiple from "./multiple";
-import TreeSelector from "./TreeSelector";
 export default {
   name: "FormItem",
   components: {
-    InputMultiple,
-    TreeSelector
+    InputMultiple
   },
   props: {
     formItem: {
@@ -184,27 +184,30 @@ export default {
         this.$emit("input", v);
       }
       if (!func) return;
+      if (type === "loadmore") {
+        func.call(this, v);
+        return;
+      }
+      this.flag = true;
+      this.pageNum = 1;
       func.call(this, v);
     },
-    loadmore() {
-      if (this.formItem.loadmore) {
-        this.formItem.loadmore.call(this, this.$refs.formItem.query);
-      }
+    remoteMethod(func, query) {
+      return func(query);
     },
-    async remoteMethod(query, type, funcName) {
-      this.pageNum = 1;
-      this.flag = true;
-      this[type] = await this[funcName](query);
-    },
-    // 下拉滚动
-    async loadmoreFun(type, funcName, query) {
-      if (this[type].length % ten === 0 && this.flag) {
+    async loadmore(currentList, func) {
+      const ten = 10;
+      if (currentList.length % ten === 0 && this.flag) {
         this.pageNum += 1;
-        const list = await this[funcName](query);
-        if (!list.length) {
+        const list = await func(this.$refs.formItem.query, this.pageNum);
+        if (!list.length || list.length < 10) {
           this.flag = false;
         }
-        this[type] = this[type].concat(...list);
+        return currentList.concat(...list);
+      } else {
+        this.flag = false;
+
+        return currentList;
       }
     }
   }

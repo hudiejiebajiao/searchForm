@@ -96,14 +96,15 @@ export default {
           reserveKeyword: true,
           suffix: true,
           clear() {
-            that.remoteMethod("", "options", "getIdList");
+            that.options = await this.remoteMethod(that.getIdList, '')
           },
           remoteMethod(query) {
             const searchContent = query.trim() || "";
-            that.remoteMethod(searchContent, "options", "getIdList");
+            that.options = await this.remoteMethod(that.getIdList, searchContent)
+
           },
           loadmore(v) {
-            that.loadmore("options", "getIdList", v);
+            that.options = await this.loadmore(that.options, that.getIdList, v)
           }
         },
         {
